@@ -1,0 +1,30 @@
+import random
+
+#Inisialisasi nilai populasi
+def foo(x,y,z):
+    return 2*x*3 + 3*y*5 + 5*z*2 - 25
+
+#Menentukan nilai fitness
+def fitness(x,y,z):
+    ans = foo(x,y,z)
+
+    if ans == 0:
+        return 99999
+    else:
+        return abs(1/ans)
+
+#Menentukan solusi terbaik
+solutions = [ ]
+for s in range(25):
+    solutions.append((random.uniform(0, 25),random.uniform(0, 25),random.uniform(0, 25)))
+
+for i in range(25):
+
+    rankedsolutions = []
+    for s in solutions:
+        rankedsolutions.append((fitness(s[0],s[1],s[2]),s))
+    rankedsolutions.sort()
+    rankedsolutions.reverse()
+
+    print(f"Pada gen ke-{i} didapatkan solusi terbaik sebagai berikut:")
+    print(rankedsolutions[0])
