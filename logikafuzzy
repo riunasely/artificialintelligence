@@ -1,0 +1,190 @@
+x_int1 = input('Masukkan Input 1 : ')
+y_int2 = input('Masukkan Input 2 : ')
+
+#Konversi string ke integer
+int1 = int(x_int1)
+int2 = int(y_int2)
+
+#Fuzzifikasi Input 1
+if int1 <= -500 :
+    value_NM = 1
+    value_NS = 0
+    value_ZE = 0
+    value_PS = 0
+    value_PM = 0
+if int1 > -500 and int1 < -250 :
+    value_NM = (-250 - int1)/(-250 + 500)
+    value_NS = (int1 + 500)/(-250 + 500)
+    value_ZE = 0
+    value_PS = 0
+    value_PM = 0
+if int1 == -250 :
+    value_NM = 0
+    value_NS = 1
+    value_ZE = 0
+    value_PS = 0
+    value_PM = 0
+if int1 > -250 and int1 < 0 :
+    value_NM = 0
+    value_NS = (0 - int1)/(0 + 250)
+    value_ZE = (int1 + 250)/(0 + 250)
+    value_PS = 0
+    value_PM = 0
+if int1 == 0 :
+    value_NM = 0
+    value_NS = 0
+    value_ZE = 1
+    value_PS = 0
+    value_PM = 0
+if int1 > 0 and int1 < 250 :
+    value_NM = 0
+    value_NS = 0
+    value_ZE = (250 - int1)/(250 - 0)
+    value_PS = (int1 - 0)/(250 - 0)
+    value_PM = 0
+if int1 == 250 :
+    value_NM = 0
+    value_NS = 0
+    value_ZE = 0
+    value_PS = 1
+    value_PM = 0
+if int1 > 250 and int1 < 500 :
+    value_NM = 0
+    value_NS = 0
+    value_ZE = 0
+    value_PS = (500 - int1)/(500 - 250)
+    value_PM = (int1 - 250)/(500 - 250)
+if int1 >= 500 :
+    value_NM = 0
+    value_NS = 0
+    value_ZE = 0
+    value_PS = 0
+    value_PM = 1
+
+print('Derajat Keanggotaan Input 1 adalah : ')
+print('NM:', value_NM)
+print('NS:', value_NS)
+print('ZE:', value_ZE)
+print('PS:', value_PS)
+print('PM:', value_PM)
+
+#Fuzzifikasi Input 2
+if int2 <= -15 :
+    value_N = 1
+    value_Z = 0
+    value_P = 0
+if int2 > -15 and int2 < 0 :
+    value_N = (0 - int2)/(0 + 15)
+    value_Z = (int2 + 15)/(0 + 15)
+    value_P = 0
+if int2 == 0 :
+    value_N = 0
+    value_Z = 1
+    value_P = 0
+if int2 > 0 and int2 < 15 :
+    value_N = 0
+    value_Z = (15 - int2)/(15 - 0)
+    value_P = (int2 - 0)/(15 - 0)
+if int2 > 15 :
+    value_N = 0
+    value_Z = 0
+    value_P = 1
+
+print('Derajat Keanggotaan Input 2 adalah : ')
+print('N:', value_N)
+print('Z:', value_Z)
+print('P:', value_P)
+
+
+hasil=[]
+
+
+#Fungsi untuk nilai minimum NM
+def fungsiImplikasiNM1 (variabel_int1, variabel_int2):
+    hasil_outputNM1 = min(variabel_int1, variabel_int2)
+    return hasil_outputNM1
+
+def fungsiImplikasiNM2 (variabel_int1, variabel_int2):
+    hasil_outputNM2 = min(variabel_int1, variabel_int2)
+    return hasil_outputNM2
+
+def fungsiImplikasiNM3 (variabel_int1, variabel_int2):
+    hasil_outputNM3 = min(variabel_int1, variabel_int2)
+    return hasil_outputNM3
+
+#Fungsi untuk nilai minimum NS
+def fungsiImplikasiNS1 (variabel_int1, variabel_int2):
+    hasil_outputNS1 = min(variabel_int1, variabel_int2)
+    return hasil_outputNS1
+
+def fungsiImplikasiNS2 (variabel_int1, variabel_int2):
+    hasil_outputNS2 = min(variabel_int1, variabel_int2)
+    return hasil_outputNS2
+
+def fungsiImplikasiNS3 (variabel_int1, variabel_int2):
+    hasil_outputNS3 = min(variabel_int1, variabel_int2)
+    return hasil_outputNS3
+
+#Fungsi untuk nilai minimum ZE          
+def fungsiImplikasiZE1 (variabel_int1, variabel_int2):
+    hasil_outputZE1 = min(variabel_int1, variabel_int2)
+    return hasil_outputZE1
+
+def fungsiImplikasiZE2 (variabel_int1, variabel_int2):
+    hasil_outputZE2 = min(variabel_int1, variabel_int2)
+    return hasil_outputZE2
+
+def fungsiImplikasiZE3 (variabel_int1, variabel_int2):
+    hasil_outputZE3 = min(variabel_int1, variabel_int2)
+    return hasil_outputZE3
+
+#Fungsi untuk nilai minimum PS      
+def fungsiImplikasiPS1 (variabel_int1, variabel_int2):
+    hasil_outputPS1 = min(variabel_int1, variabel_int2)
+    return hasil_outputPS1
+
+def fungsiImplikasiPS2 (variabel_int1, variabel_int2):
+    hasil_outputPS2 = min(variabel_int1, variabel_int2)
+    return hasil_outputPS2
+
+def fungsiImplikasiPS3 (variabel_int1, variabel_int2):
+    hasil_outputPS3 = min(variabel_int1, variabel_int2)
+    return hasil_outputPS3
+
+#Fungsi untuk nilai minimum PM         
+def fungsiImplikasiPM1 (variabel_int1, variabel_int2):
+    hasil_outputPM1 = min(variabel_int1, variabel_int2)
+    return hasil_outputPM1
+
+def fungsiImplikasiPM2 (variabel_int1, variabel_int2):
+    hasil_outputPM2 = min(variabel_int1, variabel_int2)
+    return hasil_outputPM2
+
+def fungsiImplikasiPM3 (variabel_int1, variabel_int2):
+    hasil_outputPM3 = min(variabel_int1, variabel_int2)
+    return hasil_outputPM3
+
+# Menjalankan fungsi NM dengan agregasi max
+agregasiNM = max(fungsiImplikasiNM1(value_PM, value_Z), fungsiImplikasiNM2(value_PM, value_P), fungsiImplikasiNM3(value_PS, value_P))
+hasil.append([agregasiNM, 'NM'])
+
+# Menjalankan fungsi NS dengan agregasi max
+agregasiNS = max(fungsiImplikasiNS1(value_PM, value_N), fungsiImplikasiNS2(value_PS, value_Z), fungsiImplikasiNS3(value_ZE, value_P))
+hasil.append([agregasiNS, 'NS'])
+
+# Menjalankan fungsi ZE dengan agregasi max
+agregasiZE = max(fungsiImplikasiZE1(value_PS, value_N), fungsiImplikasiZE2(value_ZE, value_Z), fungsiImplikasiZE3(value_NS, value_P))
+hasil.append([agregasiZE, 'ZE'])
+
+# Menjalankan fungsi PS dengan agregasi max
+agregasiPS = max(fungsiImplikasiPS1(value_ZE, value_N), fungsiImplikasiPS2(value_NS, value_Z), fungsiImplikasiPS3(value_NM, value_P))
+hasil.append([agregasiPS, 'PS'])
+
+# Menjalankan fungsi PM dengan agregasi max
+agregasiPM = max(fungsiImplikasiPM1(value_NS, value_N), fungsiImplikasiPM2(value_NM, value_Z), fungsiImplikasiPM3(value_NM, value_N))
+hasil.append([agregasiPM, 'PM'])
+
+print('Maka Derajat Keanggotan Keluaran adalah :', hasil)
+
+deltaU = (agregasiNM * -30 + agregasiNS * -10 + agregasiZE * 0 + agregasiPS * 10 + agregasiPM * 30) / (agregasiNM + agregasiNS + agregasiZE + agregasiPS + agregasiPM)
+print('Nilai Keluaran Delta u adalah :', deltaU)
